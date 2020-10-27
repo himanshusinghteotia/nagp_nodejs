@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/header %>
+</head>
+
+<body>
+    <% include ../partials/navigation %>
+    <div class="container">
+        <div class="card-secondary">
+            <div class="card-body">
+                <h2 style="text-align: center;">Create Position</h2>
+                <div class="card-text text-center">
+                    <form class="create-form" action="/positions/save" method="post">
+                        <br>
+                        <div class="form-group row-md-5">
+                            <label class="row-md-2 col-form-label" for="projectName">
+                                Project Name
+                            </label>
+                            <div class="row-md-2">
+                                <input type="text" id="projectName" name="projectName" class="form-control" required=""
+                                    <% if(typeof position !== 'undefined') {%> value="<%= position.projectName %>"
+                                    <% } %> placeholder="Enter Project Name">
+                                <% if(typeof projectNameErr !== 'undefined') {%>
+                                <span class="err"><%= projectNameErr.msg %> </span>
+                                <% } %>
+                            </div>
+                        </div>
+
+                        <div class="form-group row-md-5">
+                            <label class="row-md-2 col-form-label" for="clientName">
+                                Client Name
+                            </label>
+                            <div class="row-md-2">
+                                <input type="text" id="clientName" name="clientName" class="form-control" required=""
+                                    <% if(typeof position !== 'undefined') {%> value="<%= position.clientName %>"
+                                    <% } %> placeholder="Enter Client Name" >
+                                <% if(typeof clientNameErr !== 'undefined') {%>
+                                <span class="err"><%= clientNameErr.msg %> </span>
+                                <% } %>
+                            </div>
+                        </div>
+
+                        <div class="form-group row-md-5">
+                            <label class="row-md-2 col-form-label" for="role">
+                                Role
+                            </label>
+                            <div class="row-md-2">
+                                <input type="text" id="role" name="role" class="form-control" required=""
+                                    <% if(typeof position !== 'undefined') {%> value="<%= position.role %>" <% } %>
+                                    placeholder="Enter Role">
+                                <% if(typeof roleErr !== 'undefined') {%>
+                                <span class="err"><%= roleErr.msg %> </span>
+                                <% } %>
+                            </div>
+                        </div>
+
+                        <div class="form-group row-md-5">
+                            <label class="row-md-2 col-form-label" for="role">
+                                Technologies
+                            </label>
+                            <div class="row-md-2">
+                                <input type="text" id="technologies" name="technologies" class="form-control" required=""
+                                    <% if(typeof position !== 'undefined') {%> value="<%= position.technologies %>"
+                                    <% } %> placeholder="Enter Technologies">
+                                <% if(typeof technologiesErr !== 'undefined') {%>
+                                <span class="err"><%= technologiesErr.msg %> </span>
+                                <% } %>
+                            </div>
+                        </div>
+
+                        <div class="form-group row-md-5">
+                            <label class="row-md-2 col-form-label" for="jobDescription">
+                                Job Description
+                            </label>
+                            <div class="row-md-2">
+                                <textarea type="" id="jobDescription" cols="30" rows="5" name="jobDescription" required=""
+                                    <% if(typeof position !== 'undefined') {%> value="<%= position.jobDescription %>"
+                                    <% } %> class="form-control" placeholder="Enter Job Description"></textarea>
+                                <% if(typeof jobDescriptionErr !== 'undefined') {%>
+                                <span class="err"><%= jobDescriptionErr.msg %> </span>
+                                <% } %>
+                            </div>
+                        </div>
+                        <button class="btn btn-sm btn-primary" type="submit">Create</button>
+                        <br>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<% include ../partials/footer %>
+
+</html>

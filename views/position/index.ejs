@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <% include ../partials/header %>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <% include ../partials/navigation %>
+  <div class="container">
+    <center><h2>All Position Openings</h2></center>
+    <br>
+    <% if(Positions.length>0) { %>
+    <table style="text-align: center;">
+      <thead>
+        <tr>
+          <th style="text-align: left;">Project Name</th>
+          <th style="text-align: center;">Technologies</th>
+          <th style="text-align: center;">Role</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr></tr>
+        <% for(var i=0; i<Positions.length;i++) { %>
+        <tr>
+          <td style="text-align: left;"><a href="/positions/position/<%= Positions[i]._id%>"><%= Positions[i].projectName%></a></td>
+          <td><%= Positions[i].technologies%></td>
+          <td><%= Positions[i].role%></td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+    <% } else { %>
+    <div>No positions found.</div>
+    <% } %>
+  </div>
+</body>
+<% include ../partials/footer %>
+</html>

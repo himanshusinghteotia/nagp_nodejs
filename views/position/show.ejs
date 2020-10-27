@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include ../partials/header %>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <% include ../partials/navigation %>
+    <div class="container">
+        <h2 style="text-align: center;">Position Details</h2>
+        <table>
+            <tbody style="text-align: center;">
+                <tr>
+                    <td>Project Name</td>
+                    <td>:</td>
+                    <td><%= Position.projectName %></td>
+                </tr>
+                <tr>
+                    <td>Client Name</td>
+                    <td>:</td>
+                    <td><%= Position.clientName %></td>
+                </tr>
+                <tr>
+                    <td>Technologies</td>
+                    <td>:</td>
+                    <td><%= Position.technologies %></td>
+                </tr>
+                <tr>
+                    <td>Role</td>
+                    <td>:</td>
+                    <td><%= Position.role %>/year</td>
+                </tr>
+                <tr>
+                    <td>Job Description</td>
+                    <td>:</td>
+                    <td><%= Position.jobDescription %></td>
+                </tr>
+                <tr>
+                    <td>Status</td>
+                    <td>:</td>
+                    <td><%= Position.status %></td>
+                </tr>
+                <tr>
+                    <td>Createdby</td>
+                    <td>:</td>
+                    <td><%= Position.createdby %></td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <center>
+        <div class="btn btn-primary text-center" style="text-align: center;">
+            <a class="btn btn-primary" href="/positions/edit/<%= Position._id%>">EDIT</a>
+        </div>
+    </center>
+    </div>
+</body>
+<% include ../partials/footer %>
+
+</html>
